@@ -14,4 +14,10 @@ export USER_EMAIL=me@example.com
 export PASSWORD=mypassword
 ~~~~
 3. use fingerprint output in SP client(s)
-
+4. run:
+~~~~
+rails s -p 3001
+~~~~
+5. Test with a SAML service provider client like [rails_saml_sp](https://github.com/johncallahan/rails-saml-sp)
+* remember to use the fingerprint
+* set the IDP provider paths to http://localhost:3001/saml/auth
