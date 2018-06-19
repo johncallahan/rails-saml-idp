@@ -5,13 +5,13 @@ This rails app doesn't *use* a postgres database, but currently requires one (to
 % openssl x509 -noout -fingerprint -sha1 -inform pem -in myCert.crt
 ~~~~
 
-(1) strip HEADERS off myCert.crt
-(2) run:
+# strip HEADERS off myCert.crt
+# run:
 ~~~~
 export X509_CERT=$(cat myCert.crt)
 export SECRET_KEY=$(cat myKey.key)
 export USER_EMAIL=me@example.com
 export PASSWORD=mypassword
 ~~~~
-(3) use fingerprint output in SP client(s)
+# use fingerprint output in SP client(s)
 
