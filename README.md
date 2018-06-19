@@ -1,24 +1,17 @@
-# README
+This rails app doesn't *use* a postgres database, but currently requires one (to be fixed)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+~~~~
+% openssl req -x509 -sha256 -nodes -days 3650 -newkey rsa:2048 -keyout myKey.key -out myCert.crt
+% openssl x509 -noout -fingerprint -sha1 -inform pem -in myCert.crt
+~~~~
 
-Things you may want to cover:
+(1) strip HEADERS off myCert.crt
+(2) run:
+~~~~
+export X509_CERT=$(cat myCert.crt)
+export SECRET_KEY=$(cat myKey.key)
+export USER_EMAIL=me@example.com
+export PASSWORD=mypassword
+~~~~
+(3) use fingerprint output in SP client(s)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
